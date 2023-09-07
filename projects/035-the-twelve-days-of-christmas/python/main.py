@@ -26,4 +26,5 @@ def the_twelve_days_of_christmas():
     for day in range(1, 13):
         print(f'{get_ordinal_number(day)} day')
         verse_of_the_song(day)
+
 the_twelve_days_of_christmas()
