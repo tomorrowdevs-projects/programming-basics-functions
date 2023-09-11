@@ -10,10 +10,9 @@ function getCorrectCapitalizedString(string) {
     string = upperCaseI(capitalizeFirsLetter(string));
 
     for (let i = 0; i < string.length; i++) {     
-
-        if ( string[i] === "!" || string[i] === "?" || string[i] === "." ) {
-            let string2 = string.slice(0, i);
-            string = string2 + capitalizeFirsLetter(string.slice(i));   
+        
+        if ( ["!", "?", "."].includes(string[i]) ) {
+            string = string.slice(0, i) + capitalizeFirsLetter(string.slice(i));   
         }
         else {
             continue;
@@ -50,13 +49,9 @@ function upperCaseI(string) {
         if (string[i] === "i") {
 
             if (string[i - 1] === " ") {
-
-                if ( string[i + 1] === "!" || string[i + 1] === "?" || string[i + 1] === "." 
-                    || string[i + 1] === "'" || string[i + 1] === " " ) {
-                        
-                    string = string.split("");
-                    string[i] = string[i].toUpperCase();
-                    string = string.join("");
+             
+                if ( ["!", "?", ".", "'", " "].includes(string[i + 1]) ) {
+                    string = string.slice(0, i) + capitalizeFirsLetter(string.slice(i));   
                 }
             }
         }
