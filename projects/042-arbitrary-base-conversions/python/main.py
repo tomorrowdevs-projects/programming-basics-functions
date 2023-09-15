@@ -25,7 +25,6 @@ def convert_to_base_to_get(quotient, base):
 
     return ''.join(converted_base)
 
-
 def main():
     get_info = get_bases_information()
 
