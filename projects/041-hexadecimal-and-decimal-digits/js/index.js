@@ -1,4 +1,4 @@
-// Functions work either if the user wants to convert numbers greater than 2^53 or not.
+/// Functions work either if the user wants to convert numbers greater than 2^53 or not.
 
 console.log( getHextoDec("145798DCB") ); //Argument is only for example
 
@@ -25,7 +25,6 @@ function getHextoDec(s) {
         if (Dec > Math.pow(2, 53)) {
             Dec = BigInt(Dec);
             decDigit = BigInt(decDigit);
-            console.log("Ciao");
         }
 
         Dec = decDigit + Dec;
