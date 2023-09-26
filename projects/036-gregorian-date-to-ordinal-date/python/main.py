@@ -40,3 +40,13 @@ def ordinal_date(day, month, year):
             month -= 1
 
     return day_within_the_year
+
+def main():
+    day = int(input('Enter day: '))
+    month = int(input('Enter month: '))
+    year = int(input('Enter year: '))
+    day_within_the_year = ordinal_date(day, month, year)
+    print(f"The day within the year of your date is: {day_within_the_year}")
+
+if __name__ == '__main__':
+    main()
