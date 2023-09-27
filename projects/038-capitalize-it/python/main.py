@@ -20,3 +20,11 @@ def capitalize_it(message):
             new_message = new_message[:-1] + 'I'
 
     return new_message
+
+def main():
+    user_string = input("Enter your message:\n")
+    correct_message = capitalize_it(user_string)
+    print(correct_message)
+
+if __name__ == '__main__':
+    main()
