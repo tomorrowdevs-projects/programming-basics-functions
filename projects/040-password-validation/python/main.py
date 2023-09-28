@@ -1,5 +1,4 @@
 import string
-
 def password_validation(password):
     valid_upper = False
     valid_lower = False
@@ -16,6 +15,11 @@ def password_validation(password):
 
     return valid_upper and valid_lower and valid_digit
 
-p = password_validation('cC11111111')
-print(p)
-
+# Include a main program that reads a password from the user and reports whether it is good.
+def main():
+    user_password = input('Enter password:\n')
+    check_password = password_validation(user_password)
+    print(check_password)
+# Ensure that your main program only runs when your solution has not been imported into another file.
+if __name__ == '__main__':
+    main()
