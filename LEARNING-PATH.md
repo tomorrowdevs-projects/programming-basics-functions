@@ -44,16 +44,16 @@ Read the following chapters to the key concepts of this specific path
 ## **Step 2** - Practice!
 
 Code these exercises to capture the concepts you just learned:
-- [ ] [Taxi Fare](./projects/032-taxi-fare/)
-- [ ] [Shipping Calculator](./projects/033-shipping-calculator/)
-- [ ] [Random Password](./projects/039-random-password/)
-- [ ] [Password Validation](./projects/040-password-validation/)
-- [ ] [Days in a Month](./projects/043-days-in-a-month/)
-- [ ] [Time Calculator](./projects/046-time-calculator/)
+- [ ] [Taxi Fare](projects/001-taxi-fare/)
+- [ ] [Shipping Calculator](projects/002-shipping-calculator/)
+- [ ] [Random Password](projects/008-random-password/)
+- [ ] [Password Validation](projects/009-password-validation/)
+- [ ] [Days in a Month](projects/012-days-in-a-month/)
+- [ ] [Time Calculator](projects/015-time-calculator/)
 
 ### **Additional tasks**
 - [ ]  Improve your [Linkedin profile](https://www.linkedin.com/business/sales/blog/profile-best-practices/17-steps-to-a-better-linkedin-profile-in-2017)
-- [ ]  Invest 1hr/day in networking using Linkedin. Increase your network up to 50 valuable connections
+- [ ]  Invest 1hr/day in networking using LinkedIn. Increase your network up to 50 valuable connections
 - [ ]  Watch [How I Stay Motivated & Continue Growing!](https://youtu.be/kWfxZ2jDmP8)
   
 <hr>
