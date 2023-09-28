@@ -2,6 +2,15 @@
 # Created by https://www.toptal.com/developers/gitignore/api/node,go,java,intellij,visualstudiocode,haskell,erlang,elixir,rust
 # Edit at https://www.toptal.com/developers/gitignore?templates=node,go,java,intellij,visualstudiocode,haskell,erlang,elixir,rust
 
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+
 ### Elixir ###
 /_build
 /cover

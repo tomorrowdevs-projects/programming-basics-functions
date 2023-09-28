@@ -15,11 +15,18 @@ Three French hens,
 Two turtle doves,
 And a partridge in a pear tree.*
 
-Write a program that displays the complete lyrics for The Twelve Days of Christ- mas. 
-Your program should include a function that displays one verse of the song. 
-It will take the verse number as its only parameter. Then your program should call this function 12 times with integers that increase from 1 to 12.
+Write a program that displays the complete lyrics for The Twelve Days of Christmas.  
 
-Each item that is sent to the recipient in the song should only appear in your program once, with the possible exception of the partridge. It may appear twice if that helps you handle the difference between “A partridge in a pear tree” in the first verse and “And a partridge in a pear tree” in the subsequent verses. 
+Your program should include a function that displays one verse of the song.   
+It will take the verse number as its only parameter.   
+Then your program should call this function 12 times with integers that increase from 1 to 12.   
+
+Each item that is sent to the recipient in the song should only appear in your program once,
+with the possible exception of the partridge. 
+
+It may appear twice if that helps you handle the difference between 
+“A partridge in a pear tree” in the first verse and “And a partridge in a pear tree” 
+in the subsequent verses.    
 You can even import your solution to Exercise 034 to help you complete this exercise.
 
 # Documentation
