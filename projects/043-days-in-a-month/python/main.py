@@ -8,7 +8,7 @@ def is_it_a_leap_year(year):
     else:
         return False
 
-def date(month, year):
+def days_in_a_month(month, year):
     leap_year = is_it_a_leap_year(year)
 
     if leap_year == True: #366 days
@@ -33,8 +33,11 @@ def date(month, year):
 
     return days
 
-def days_in_a_month():
+def main():
     month = int(input("Enter a month as a digit between 1 and 12:\n"))
     year = int(input("Enter an year as a 4 digit:\n"))
+    day = days_in_a_month(month, year)
+    print(f'{day} days')
 
-    return (f'{date(month, year)} days')
+if __name__ == '__main__':
+    main()
