@@ -28,11 +28,11 @@ Press Ctrl+Shift+x search and install the **runme** extension.
 **Python**
 
 ```sh
-python -m unittest python/test_shipping_calculator.py
+python -m unittest python/test_integer_to_ordinal.py
 ```
 
 or run the command from the terminal  
-`python -m unittest projects/002-shipping-calculator/python/test_shipping_calculator.py`
+`python -m unittest projects/003-integer-to-ordinal/python/test_integer_to_ordinal.py`
 
 
 # Deadline
