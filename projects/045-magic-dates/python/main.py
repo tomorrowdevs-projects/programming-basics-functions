@@ -47,3 +47,10 @@ def magic_dates():
                         result.append(f"{day}-{month_of_year[month - 1]}-{year}")
 
     return ';\n'.join(result)
+
+def main():
+    magic_dates_list = magic_dates()
+    print(f'Here all of the magic dates in the 20th century:\n{magic_dates_list}')
+
+if __name__ == '__main__':
+    main()
