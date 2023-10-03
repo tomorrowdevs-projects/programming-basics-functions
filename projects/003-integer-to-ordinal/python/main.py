@@ -12,7 +12,7 @@ def integer_to_ordinal(num):
 def main():
     num = int(input('Enter an integer between 1 and 12: '))
     int_to_ord = integer_to_ordinal(num)
-    print(f'Your number as literal ordinal number: {int_to_ord}')
+    print(f'The ordinal day of {num} is {int_to_ord}')
     ordinal = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth']
     for ordinal_index in range(0, len(ordinal)):
         print(f'{ordinal_index + 1}: {ordinal[ordinal_index]}')
