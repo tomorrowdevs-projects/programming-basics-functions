@@ -1,17 +1,10 @@
 import string
 
-
-def get_bases_information():
-    number_to_convert = input('Enter number to convert:\n')
-    starting_base = int(input('Enter the starting base:\n'))
-    arrival_base = int(input('Enter the arrival base:\n'))
-
-    return number_to_convert, starting_base, arrival_base
-
 def convert_to_base_10(number, base):
-    return int(number, base)
+    converted_number = int(number, base)
+    return converted_number
 
-def convert_to_base_to_get(quotient, base):
+def convert_to_arbitrary_base(quotient, base):
     converted_base = []
 
     while quotient != 0:
@@ -26,13 +19,22 @@ def convert_to_base_to_get(quotient, base):
     return ''.join(converted_base)
 
 def main():
-    get_info = get_bases_information()
+    number_to_convert = input('Enter number to convert:\n')
+    starting_base = int(input('Enter the starting base:\n'))
+    arrival_base = int(input('Enter the arrival base:\n'))
 
-    if get_info[1] not in range(2, 17) or get_info[2] not in range(2, 17):
-        return ValueError("Invalid digit! The base must be between 2 and 16 inclusive")
-    elif get_info[2] == 10:
-        return convert_to_base_10(get_info[0], get_info[1])
+    if starting_base > 16 or starting_base < 2 or arrival_base > 16 or arrival_base < 2:
+        raise ValueError("Invalid digit! The base must be between 2 and 16 inclusive")
+
+    base_10 = convert_to_base_10(number_to_convert, starting_base)
+    arbitrary_base = convert_to_arbitrary_base(base_10, arrival_base)
+
+    if arrival_base == 10:
+        print(base_10)
+    elif starting_base == 10:
+        print(arbitrary_base)
     else:
-        return convert_to_base_to_get(convert_to_base_10(get_info[0], get_info[1]), get_info[2])
+        print(arbitrary_base)
 
-print(main())
+if __name__ == '__main__':
+    main()
