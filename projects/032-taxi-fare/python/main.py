@@ -1,4 +1,4 @@
-# defines a function that takes km as the only parameter to calculate the price for taxi fares
+# defines a function that takes km as the only parameter to calculate the price for taxy fares
 def taxy_fares(km): 
 # transforms kilometers in meters and stores it in a variable called "meters"
     meters = km * 1000
