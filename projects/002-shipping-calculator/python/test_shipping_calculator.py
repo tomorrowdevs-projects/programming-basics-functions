@@ -24,8 +24,9 @@ class TestShippingCalculator(TestCase):
             result = round(shipping_calculator(number_of_items), 2)
             self.assertEqual(10.99, result, 'Value different that the expected')
 
-        except TypeError as error:
-            print(f' > The value returned from your function is not a float type.\n', error)
+        except TypeError:
+            print(f' > The value returned from your function is not a float type.\n')
+            assert False
 
 
     def test_shipping_calculator_more_items_ok(self):
@@ -40,7 +41,8 @@ class TestShippingCalculator(TestCase):
             result = round(shipping_calculator(number_of_items), 2)
             self.assertEqual(151.52, result, 'Value different that the expected')
 
-        except TypeError as error:
-            print(f' > The value returned from your function is not a float type.\n', error)
+        except TypeError:
+            print(f' > The value returned from your function is not a float type.\n')
+            assert False
 
 

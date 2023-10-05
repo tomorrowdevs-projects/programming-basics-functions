@@ -20,13 +20,15 @@ class TestTaxiFare(TestCase):
 
         distance = 20
 
+
         try:
             # get only 2 decimal position
             result = round(taxi_fare(distance), 2)
             self.assertEqual(39.71, result, 'Value different that the expected')
 
-        except TypeError as error:
-            print(f' > The value returned from your function is not a float type.\n', error)
+        except TypeError:
+            print(f' > The value returned from your function is not a float type.\n')
+            assert False
 
     def test_taxi_fear_no_plus_ok(self):
         """
@@ -38,8 +40,9 @@ class TestTaxiFare(TestCase):
         try:
             # get only 2 decimal position
             result = round(taxi_fare(distance), 2)
-            self.assertEqual(4.0, result)
+            self.assertEqual(4.0, result, 'Value different that the expected')
 
-        except TypeError as error:
-            print(f' > The value returned from your function is not a float type.\n', error)
+        except TypeError:
+            print(f' > The value returned from your function is not a float type.\n')
+            raise False
 
