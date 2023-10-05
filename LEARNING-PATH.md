@@ -28,6 +28,8 @@ Read the following chapters to the key concepts of this specific path
 #### Theory
 - [ ] [Think Python - Chapter 3](https://greenteapress.com/thinkpython2/thinkpython2.pdf)
 - [ ] [Python Functions](https://www.w3schools.com/python/python_functions.asp)
+- [ ] [Defining and Calling Python Functions](https://realpython.com/courses/defining-and-calling-functions/)
+- [ ] [Defining Main Functions in Python](https://realpython.com/python-main-function/)
 
 
 #### Syntax Reference
