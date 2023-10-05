@@ -25,3 +25,12 @@ class TestIntegerToOrdinal(TestCase):
             self.assertEqual(ok_result, result, f'The ordinal of the integer {day} is {ok_result}')
 
 
+    def test_integer_to_ordinal_outside_of_range(self):
+        """
+        Check if return an empty string if the function is called with an argument outside the range 1-12
+        """
+
+        result = integer_to_ordinal(15).lower()
+        self.assertEqual('', result,
+                         'Your function should return an empty string is called with an argument outside the range 1-12')
+
