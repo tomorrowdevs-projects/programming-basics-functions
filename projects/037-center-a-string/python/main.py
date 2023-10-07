@@ -2,10 +2,10 @@ def centered_string(string, window_width):
     string_width = len(string)
 
     if string_width >= window_width:
-        return f'The width of string is larger then window\'s size : {string_width}'
+        return f'The string\'s width is larger then window\'s size : {string_width}'
     else:
         leading_space = (window_width - string_width) // 2
-        centered_string = ' ' * leading_space + string + ' ' * leading_space
+        centered_string = ' ' * leading_space + string
 
     return centered_string
     
