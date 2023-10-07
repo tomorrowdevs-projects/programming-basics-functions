@@ -1,6 +1,6 @@
 # Password Validation
 
-In this exercise you will write a function that determines whether a password is good.   
+In this exercise you will write a function named **password validation** that determines whether a password is good.   
 We will define a good password to be a one that is:
 - at least 8 characters long
 - contains at least one uppercase letter
@@ -20,6 +20,25 @@ For this project solution you may use:
 - Functions
 - Iterations
 - Conditionals and recursion
+
+
+# Test
+Execute the test to validate your solution.  
+
+**VSCODE**   
+To run the test command from the README.md install the extension **runme**. 
+Press Ctrl+Shift+x search and install the **runme** extension. 
+
+
+**Python**
+
+```sh
+python -m unittest python/test_password_validation.py
+```
+
+or run the command from the terminal  
+`python -m unittest projects/009-password-validation/python/test_password_validation.py`
+
 
 # Deadline
 

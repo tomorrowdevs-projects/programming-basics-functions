@@ -42,7 +42,7 @@ class TestCenterAString(TestCase):
         string_ = 'Embrace the journey, for within its twists and turns lies the beauty of discovery'
         width  = 100
 
-        ok_result = '          Embrace the journey, for within its twists and turns lies the beauty of discovery'
+        ok_result = '         Embrace the journey, for within its twists and turns lies the beauty of discovery'
         result = center_string(string_, width)
         self.assertEqual(ok_result, result)
 
