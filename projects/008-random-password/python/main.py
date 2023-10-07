@@ -1,6 +1,6 @@
 import random
 
-def random_psw():
+def random_password():
     gen_password = ''
     password_len = random.randrange(7,11)
     for num in range(password_len):
@@ -10,7 +10,7 @@ def random_psw():
 
 
 def main():
-    print(random_psw())
+    print(random_password())
 
 
 if __name__ == '__main__':
