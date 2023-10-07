@@ -1,4 +1,4 @@
-# defines a function that gived an integer between one and twelve, return the ordinal number
+# defines a function that return the ordinal number from integer
 def integer_to_ordinal(integers):
     if integers == 1:
         return 'first'
@@ -24,45 +24,56 @@ def integer_to_ordinal(integers):
         return 'eleventh'
     elif integers == 12:
         return 'twelfth'
-    
-# defines a function that display a single verse of the song "The twelve days of Christmas" with hte only parameter a number between one and twelve 
 
-def christmas_song_verse(verse):
+#assigns a variable for every single item of the song
+gift_one =  ' a partridge in a pear tree'
+gift_two =  ' two turtle doves'
+gift_three = ' three French hens'
+gift_four = ' four calling birds'
+gift_five = ' five golden rings'
+gift_six = ' six geese-a-laying'
+gift_seven = ' seven swans-a-swimming'
+gift_eight = ' eight maids-a-milking'
+gift_nine = ' nine ladies dancing'
+gift_ten = ' ten lords a leaping'
+gift_eleven = ' eleven pipers piping'
+gift_twelve = ' twelve drummers drumming'
 
-    first_part = f'On the {integer_to_ordinal(verse)} day of Christmas my true love sent to me:'
+#defines a function that take a integer as the number of the verse and return verse 
+def verse(number):
+    number = int(number)
 
-    ending_part = ' and a partridge in a pear tree.'
+    first_part = f'On the {integer_to_ordinal(number)} day of Christmas my true love sent to me:'
 
-    if verse == 1:
-        print(f'{first_part} A partridge in a pear tree.\n')
-    elif verse == 2:
-        print(f'{first_part} two turtle doves,{ending_part}\n')
-    elif verse == 3:
-        print(f'{first_part} three French hens, two turtle doves,{ending_part}\n')
-    elif verse == 4:
-        print(f'{first_part} four calling birds, three French hens, two turtle doves,{ending_part}\n')
-    elif verse == 5:
-        print(f'{first_part} five golden rings, four calling birds, three French hens, two turtle doves,{ending_part}\n')
-    elif verse == 6:
-        print(f'{first_part} six geese-a-laying, four calling birds, three French hens, two turtle doves,{ending_part}\n')
-    elif verse == 7:
-        print(f'{first_part} seven swans a-swimming, six geese-a-laying, four calling birds, three French hens, two turtle doves,{ending_part}\n')
-    elif verse == 8:
-        print(f'{first_part} eight maids a-milking, seven swans-a-swimming, six geese-a-laying, four calling birds, three French hens, two turtle doves,{ending_part}\n')
-    elif verse == 9:
-        print(f'{first_part} nine ladies dancing, eight maids-a-milking, seven swans-a-swimming, six geese-a-laying, four calling birds, three French hens, two turtle doves,{ending_part}\n')
-    elif verse == 10:
-        print(f'{first_part} ten lords a leaping, nine ladies dancing,eight maids-a-milking, seven swans-a-swimming, six geese-a-laying, four calling birds, three French hens, two turtle doves,{ending_part}\n')
-    elif verse == 11:
-        print(f'{first_part} eleven pipers piping, ten lords a leaping, nine ladies dancing, eight maids-a-milking, seven swans-a-swimming, six geese-a-laying, four calling birds, three French hens, two turtle doves,{ending_part}\n')
-    elif verse == 12:
-        print(f'{first_part}  Twelve drummers drumming, eleven pipers piping, ten lords a leaping, nine ladies dancing,eight maids-a-milking, seven swans-a-swimming, six geese-a-laying, four calling birds, three French hens, two turtle doves,{ending_part}\n')
+    if number == 1:
+        return first_part + gift_one + '.'
+    elif number == 2:
+        return first_part + gift_two + ', and' + gift_one + '.'
+    elif number == 3:
+        return first_part + gift_three + ',' + gift_two + ', and' + gift_one + '.'   
+    elif number == 4:
+        return first_part + gift_four + ',' + gift_three + ',' + gift_two + ', and' + gift_one + '.'
+    elif number == 5:
+        return first_part + gift_five + ',' + gift_four + ',' + gift_three + ',' + gift_two + ', and' + gift_one + '.'
+    elif number == 6:
+        return first_part + gift_six + ',' + gift_five + ',' + gift_four + ',' + gift_three + ',' + gift_two + ', and' + gift_one + '.'
+    elif number == 7:
+        return first_part + gift_seven + ',' + gift_six + ',' + gift_five + ',' + gift_four + ',' + gift_three + ',' + gift_two + ', and' + gift_one + '.'
+    elif number == 8:
+        return first_part + gift_eight + ',' + gift_seven + ',' + gift_six + ',' + gift_five + ',' + gift_four + ',' + gift_three + ',' + gift_two + ', and' + gift_one + '.'
+    elif number == 9:
+        return first_part + gift_nine + ',' + gift_eight + ',' + gift_seven + ',' + gift_six + ',' + gift_five + ',' + gift_four + ',' + gift_three + ',' + gift_two + ', and' + gift_one + '.'
+    elif number == 10:
+        return first_part + gift_ten + ',' + gift_nine + ',' + gift_eight + ',' + gift_seven + ',' + gift_six + ',' + gift_five + ',' + gift_four + ',' + gift_three + ',' + gift_two + ', and' + gift_one + '.'
+    elif number == 11:
+        return first_part + gift_eleven + ',' + gift_ten + ',' + gift_nine + ',' + gift_eight + ',' + gift_seven + ',' + gift_six + ',' + gift_five + ',' + gift_four + ',' + gift_three + ',' + gift_two + ', and' + gift_one + '.'
+    elif number == 12:
+        return first_part + gift_twelve + ',' + gift_eleven + ',' + gift_ten + ',' + gift_nine + ',' + gift_eight + ',' + gift_seven + ',' + gift_six + ',' + gift_five + ',' + gift_four + ',' + gift_three  + ',' + gift_two + ', and' + gift_one + '.'
 
-#for loop that displays the whole song using the function already defined
-   
-for i in range(1,13):
+# defines a function that display the whole song using the previous function
+def Christmas_song():
+    for i in range(1,13):
+        print(verse(i))
 
-    christmas_song_verse(i)
 
-
-    
+Christmas_song()
