@@ -13,7 +13,7 @@ def ordinal_date(day, month, year):
     leap_year = is_it_a_leap_year(year)
     day_within_the_year = day
 
-    if leap_year == True: #366 days
+    if leap_year: #366 days
         while month != 0:
             if month < 8 and month % 2 != 0:
                 day_within_the_year += 31
