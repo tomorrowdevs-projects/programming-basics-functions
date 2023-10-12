@@ -12,12 +12,31 @@ Your functions should display a meaningful error message and end the program
 if the parameter’s value is outside the expected range.
 
 # Documentation
+[Hex To Decimal](https://www.rapidtables.com/convert/number/hex-to-decimal.html)
 
 For this project solution you may use:
 
 - Functions
 - Iterations
 - Conditionals and recursion
+
+# Test
+Execute the test to validate your solution.  
+
+**VSCODE**   
+To run the test command from the README.md install the extension **runme**. 
+Press Ctrl+Shift+x search and install the **runme** extension. 
+
+
+**Python**
+
+```sh
+python -m unittest python/test_hexadecimal_and_decimal_digits.py
+```
+
+or run the command from the terminal  
+`python -m unittest projects/010-hexadecimal-and-decimal-digits/python/test_hexadecimal_and_decimal_digits.py`
+
 
 # Deadline
 
