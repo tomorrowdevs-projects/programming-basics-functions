@@ -1,6 +1,6 @@
 # Password Validation
 
-In this exercise you will write a function named **password validation** that determines whether a password is good.   
+In this exercise you will write a function named **is valid password** that determines whether a password is good.   
 We will define a good password to be a one that is:
 - at least 8 characters long
 - contains at least one uppercase letter
