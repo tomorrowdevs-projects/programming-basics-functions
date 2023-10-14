@@ -1,1 +1,33 @@
 'use strict';
+
+let firstItem = 10.99;
+let subsequentItem = 2.99;
+
+let totalItem = Number(
+    prompt('How many items would you like to ship overall?')
+);
+
+// Variable initialised for total shipping cost
+let totalShipping = (totalItem - 1) * subsequentItem + firstItem;
+
+function shippingCalculator(totalItem) {
+    if (totalItem > 1) {
+        return alert(
+            `The total number of purchase is ${totalItem}. Total shipping is €${totalShipping.toFixed(
+                2
+            )}.`
+        );
+    } else if (
+        totalItem <= 0 ||
+        totalItem === '' ||
+        totalItem === ' ' ||
+        isNaN(totalItem)
+    ) {
+        alert('Enter a number greater than 0');
+    } else {
+        return alert(
+            `The total number of purchase is ${totalItem}. Total shipping is €${firstItem}.`
+        );
+    }
+}
+shippingCalculator(totalItem);
