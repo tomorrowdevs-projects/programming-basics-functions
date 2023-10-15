@@ -68,5 +68,4 @@ function integerToOrdinal(integer) {
             alert(' ');
     }
 }
-
 integerToOrdinal(integer);
