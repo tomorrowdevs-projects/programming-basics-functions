@@ -9,7 +9,7 @@
 
 ## **Main Goal**
 
-At the end of this path, you will be able to build a **Secure Password Generator** , just using Variables, expressions, statements, string, conditionals and iterations.
+At the end of this path, you will be able to build a **Simple Time Display** , just using Variables, expressions, statements, string, conditionals and iterations.
 
 <hr>
 
@@ -63,7 +63,7 @@ Code these exercises to capture the concepts you just learned:
 ## **Step 3** - Build the Project
 Carry out a complete project as a certification of your skills
 
-- [ ] [**Secure Password Generator**](./projects/final-project/)
+- [ ] [**Simple Time Display**](./projects/final-project/)
 
 ### **Additional tasks**
 

@@ -1,23 +1,33 @@
-# Secure Password Generator
+# Simple Time Display
 
-The present project consists in the development of a secure password generator, a tool that allows users to create complex and difficult to guess passwords. The generator will capture the desired password length and provide a random password, consisting of a combination of alphanumeric characters and symbols.
+### Description
+The goal of this project is to create a simple command-line program that displays accurate time and date information,
+along with additional features like time zone conversion and countdowns.
 
-## Objective:
-The goal of the project is to provide users with a tool for generating secure passwords that can be used to protect online accounts, sensitive data and other personal information. 
-Using variables, strings, mathematical calculations, conditional operators, loops and functions, the generator will allow users to obtain random and complex passwords quickly and reliably.
+### Requirements
 
-## Main features:
+**Display Current Time**   
+The program should display the current time and date based on the system clock.
 
-### Password length capture:
+**Time Zone Conversion**  
+Allow the user to input a specific time zone, and then display the current time in that time zone.
 
-Ask the user to enter the desired password length and store it in a numeric variable.
+**Countdown Timer**   
+Enable the user to set a countdown timer for a specific amount of time (in hours, minutes, and seconds) 
+and display the remaining time.
 
-### Password generation:
+**Stopwatch**  
+Implement a stopwatch feature that allows the user to start, stop, and reset the timer.
 
-- Using a for loop, generate a random password of desired length.
-- Use a combination of alphanumeric characters and symbols to create a strong and secure password.
-- Store the generated password in a string type variable.
+**Display Date Information**   
+Include additional date information such as day of the week, day of the year, and week number.
 
-### Password display:
+**Customizable Output**    
+Allow the user to choose how they want the countdown displayed (e.g., days, hours, minutes).
 
-Using a function to hide the displayed password, print the generated password for the user to the screen.
+**World Clock Display**   
+Allow the user to add and display multiple clocks for different time zones simultaneously.
+
+
+_Remember, you don't need to implement all of these features at once.   
+Start with the basic functionality and gradually add more features as you become comfortable with the project._ 
