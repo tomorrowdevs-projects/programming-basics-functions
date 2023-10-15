@@ -16,7 +16,10 @@ def capitalize_it(message):
         if letter in ['!', '?', '.']:
             capitalize = True
 
-        elif letter == 'i' and message[i - 1] == ' ' and message[i - 2] in ['!', '?', '.', "'", ' '] or letter == 'i' and message[i + 1] in ['!', '?', '.', "'", ' ']:
+        elif letter == 'i' and message[i + 1] in ['!', '?', '.', "’", "'", " "]:
+            new_message = new_message[:-1] + 'I'
+
+        elif letter == 'I' and message[i + 1] in ['!', '?', '.', "’", "'", " "]:
             new_message = new_message[:-1] + 'I'
 
     return new_message
