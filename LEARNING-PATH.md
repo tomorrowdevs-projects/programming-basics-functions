@@ -39,7 +39,7 @@ Read the following chapters to the key concepts of this specific path
 
 #### Additional Resources
 - [Google Style Guide - Chapter 4, 5, 6, 7](https://google.github.io/styleguide/jsguide.html)
-- [Workshop - Clean Code](https://my.tomorrowdevs.com/admin-app/courses/787402/curriculum/lessons/17724902)
+- [Workshop - Clean Code](https://my.tomorrowdevs.com/courses/tomorrowdevs/lectures/17724902)
 
 <hr>
 
