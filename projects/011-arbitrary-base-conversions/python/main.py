@@ -20,7 +20,7 @@ def base_10_to_arbitrary_base(number, arbitrary_base):
     number = int(number)
     while number > 0:
         remainder = number % arbitrary_base
-        if arbitrary_base == 16 and number in letter_hex.keys():
+        if (arbitrary_base >= 11 and arbitrary_base <= 16) and number in letter_hex.keys():
             converted_to_arbitrary += str(letter_hex[number])
         else:
             converted_to_arbitrary += str(remainder)
@@ -29,7 +29,7 @@ def base_10_to_arbitrary_base(number, arbitrary_base):
 
 
 def main():
-    bases = [2, 8, 16]
+    bases = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
 
     arbitrary_base = int(input('Please enter a base you want to start with: '))
     number_to_convert_to_10 = str(input('Enter the number that you want to convert to base 10: '))
