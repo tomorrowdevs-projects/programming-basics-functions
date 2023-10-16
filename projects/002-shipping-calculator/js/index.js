@@ -26,8 +26,6 @@ function main() {
     let totalItem = Number(
         prompt('How many items would you like to ship overall?')
     );
-
-    // Variable initialised for total shipping cost
     const totalShipping = alert(
         ((totalItem - 1) * subsequentItem + firstItem).toFixed(2)
     );
