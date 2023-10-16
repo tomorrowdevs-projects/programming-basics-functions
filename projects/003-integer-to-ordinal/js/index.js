@@ -1,7 +1,5 @@
 'use strict';
 
-const integer = Number(prompt('Enter a number from 1 to 12'));
-
 function integerToOrdinal(integer) {
     switch (integer) {
         case 1:
