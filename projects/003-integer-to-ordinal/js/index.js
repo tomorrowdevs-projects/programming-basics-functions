@@ -67,6 +67,7 @@ function integerToOrdinal(integer) {
     }
 }
 
+// Main programm
 const integer = Number(prompt('Enter a number from 1 to 12'));
 integerToOrdinal(integer);
 for (let i = 1; i <= 12; i++) {
