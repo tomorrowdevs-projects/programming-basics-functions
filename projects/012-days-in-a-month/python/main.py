@@ -1,42 +1,39 @@
-def is_it_a_leap_year(year):
-    if year % 400 == 0:
-        return True
-    elif year % 100 == 0:
-        return False
-    elif year % 4 == 0:
+def is_leap_year(year):
+    year = int(year)
+    if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
         return True
     else:
         return False
+        
+
+def feb_days(year):
+    if is_leap_year(year) == True:
+        return 29
+    else:
+        return 28
+
 
 def days_in_a_month(month, year):
-    leap_year = is_it_a_leap_year(year)
+    month_days = [31, feb_days(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    if 1 <= month <= 12:
+        return month_days[month - 1]
 
-    if leap_year == True: #366 days
-            if month < 8 and month % 2 != 0:
-                days = 31
-            elif month >= 8 and month % 2 == 0:
-                days = 31
-            elif month == 2:
-                days = 29
-            else:
-                days = 30
-
-    else: #365 days
-            if month < 8 and month % 2 != 0:
-                days = 31
-            elif month >= 8 and month % 2 == 0:
-                days = 31
-            elif month == 2:
-                days = 28
-            else:
-                days = 30
-
-    return days
 
 def main():
-    month = int(input("Enter a month as a digit between 1 and 12:\n"))
-    year = int(input("Enter an year as a 4 digit:\n"))
+    year = input("Please enter a year (YYYY format): ")
+    while len(year) < 4:
+        print('Error. Year must be a four-digit input. ')
+        year = input("Please enter a year (YYYY format): ")
+    else:
+        month = int(input('Please enter a month (1-12): '))
+        if month < 1 or month > 12:
+            print('Error. Entered invalid month.')
+        else:
+            days_in_month = days_in_a_month(month, year)
+            print(f'Days in month {month}: {days_in_month}')
 
-    return (f'{date(month, year)} days')
+
+if __name__ == '__main__':
+    main()
 
 
