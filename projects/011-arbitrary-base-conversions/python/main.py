@@ -1,8 +1,9 @@
+# defines a function that convert a number with a base between 2 and 16 to base 10.
 def arbitrary_to_base_10(number,base):
 
     if base > 16 or base < 2:
         return 'base out of range'
-
+   
     number = str(number)
 
     result = 0
@@ -10,8 +11,9 @@ def arbitrary_to_base_10(number,base):
     exponent = 0
 
     letter_list = 'ABCDEF'
-
+# series of conditionals that, in base of the number system choosen, modify execution's flow.
     if base == 11:
+# for loop that iterates the number typed, eventually translate letters in number and perform the conversion.
         for digit in number[::-1]:
             if digit.isalpha() and not digit.upper() == letter_list[0]:
                 return 'error'
@@ -95,7 +97,7 @@ def arbitrary_to_base_10(number,base):
             result += int(digit) * base ** exponent
             exponent += 1
         return int(result)
-    
+# else statement that performs conversion if the number gived is not alphanumeric.
     else: 
         for digit in number[::-1]:
             if digit.isalpha():
@@ -105,20 +107,23 @@ def arbitrary_to_base_10(number,base):
         return int(result)
 
 
+# defines a function that convert a number with a base between 2 and 16 to base 10.
 def base_10_to_arbitrary_base(number,base):
 
     if base > 16 or base < 2:
         return 'base out of range'
 
     result = ''
-
+# series of conditionals that, in base of the number system choosen, control execution's flow.
     if base == 11:
+# while loop that divides the number for the base, store the remainder as result and eventually translate letters to perform the conversion.
         while number != 0:
             remainder = int(number % base)
             if remainder == 10:
                 remainder = 'A'
             result += str(remainder)
             number = number // base
+# once while loop ends return the result inverted, so we have the number converted.
         return result[::-1]
     elif base == 12:
         while number != 0:
@@ -191,28 +196,33 @@ def base_10_to_arbitrary_base(number,base):
             number = number // base
         return result[::-1]
     else:
+# else statements that performs conversion if number gived is not alphanumeric.
         while number != 0:
             remainder = int(number % base)
             result += str(remainder)
             number = number // base
         return result[::-1]
     
-
+# defines a main program that asks to user a number to convert ( with his base) and a base to perform the conversion, using the functions already defined. If user choose a base outside the range between 2 and 16 it displays an error message.
 def main():
+
     number = int(input('Enter a number to convert: '))
+
     base_of_number = int(input('Enter base of number: '))
-    base_conversion = int(input ('Enter base for conversion: '))
 
     if base_of_number > 16 or base_of_number < 2:
         return 'base out of range'
-    elif base_conversion > 16 or base_conversion < 2:
+    
+    base_conversion = int(input ('Enter base for conversion: '))
+
+    if base_conversion > 16 or base_conversion < 2:
         return 'base out of range'
 
     first_step = arbitrary_to_base_10(number, base_of_number)
     
     result = base_10_to_arbitrary_base(first_step, base_conversion)
     
-    return result
+    print(result)
 
 
-print(main())
+main()
