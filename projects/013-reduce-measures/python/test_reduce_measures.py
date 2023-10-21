@@ -39,7 +39,7 @@ class TestReduceMeasures(TestCase):
         self.assertIn('2 cups, 3 tablespoons, 0 teaspoon', result)
 
         result = reduce_measures(73, unit_of_measure)
-        self.assertIn('4 cups, 4 tablespoons, 0 teaspoon', result)
+        self.assertIn('4 cups, 9 tablespoons, 0 teaspoon', result)
 
         result = reduce_measures(1, unit_of_measure)
         self.assertIn('0 cup, 1 tablespoons, 0 teaspoon', result)

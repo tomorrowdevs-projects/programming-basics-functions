@@ -13,20 +13,217 @@ if not is_file_empty:
 class TestArbitraryBaseConversions(TestCase):
 
 
-    def test_arbitrary_to_base_10_ok(self):
+    def test_arbitrary_to_base_10_base_2_ok(self):
         """
         Check if correctly converts from an arbitrary base (between 2 and 16) to base 10
         """
 
-        for base in range(2, 17):
-            numbers = list(range(0, base))
+        base = 2
+        numbers = list(range(0, base))
 
-            for number in numbers:
-                result = arbitrary_to_base_10(str(number), base)
-                self.assertEqual(int(number), result,
-                                 f'The correct result for the number {number} with base {base} must be {number}')
+        for number in numbers:
+            result = arbitrary_to_base_10(str(number), base)
+            self.assertEqual(number, result,
+                             f'The correct result for the number {number} with base {base} must be {number}')
+
+    def test_arbitrary_to_base_10_base_3_ok(self):
+        """
+        Check if correctly converts from an arbitrary base (between 2 and 16) to base 10
+        """
+
+        base = 3
+        numbers = list(range(0, base))
+
+        for number in numbers:
+            result = arbitrary_to_base_10(str(number), base)
+            self.assertEqual(number, result,
+                             f'The correct result for the number {number} with base {base} must be {number}')
+
+    def test_arbitrary_to_base_10_base_4_ok(self):
+        """
+        Check if correctly converts from an arbitrary base (between 2 and 16) to base 10
+        """
+
+        base = 4
+        numbers = list(range(0, base))
+
+        for number in numbers:
+            result = arbitrary_to_base_10(str(number), base)
+            self.assertEqual(number, result,
+                             f'The correct result for the number {number} with base {base} must be {number}')
+
+    def test_arbitrary_to_base_10_base_5_ok(self):
+        """
+        Check if correctly converts from an arbitrary base (between 2 and 16) to base 10
+        """
+
+        base = 5
+        numbers = list(range(0, base))
+
+        for number in numbers:
+            result = arbitrary_to_base_10(str(number), base)
+            self.assertEqual(number, result,
+                             f'The correct result for the number {number} with base {base} must be {number}')
+
+    def test_arbitrary_to_base_10_base_6_ok(self):
+        """
+        Check if correctly converts from an arbitrary base (between 2 and 16) to base 10
+        """
+
+        base = 6
+        numbers = list(range(0, base))
+
+        for number in numbers:
+            result = arbitrary_to_base_10(str(number), base)
+            self.assertEqual(number, result,
+                             f'The correct result for the number {number} with base {base} must be {number}')
+
+    def test_arbitrary_to_base_10_base_7_ok(self):
+        """
+        Check if correctly converts from an arbitrary base (between 2 and 16) to base 10
+        """
+
+        base = 7
+        numbers = list(range(0, base))
+
+        for number in numbers:
+            result = arbitrary_to_base_10(str(number), base)
+            self.assertEqual(number, result,
+                             f'The correct result for the number {number} with base {base} must be {number}')
+
+    def test_arbitrary_to_base_10_base_8_ok(self):
+        """
+        Check if correctly converts from an arbitrary base (between 2 and 16) to base 10
+        """
+
+        base = 8
+        numbers = list(range(0, base))
+
+        for number in numbers:
+            result = arbitrary_to_base_10(str(number), base)
+            self.assertEqual(number, result,
+                             f'The correct result for the number {number} with base {base} must be {number}')
+
+    def test_arbitrary_to_base_10_base_9_ok(self):
+        """
+        Check if correctly converts from an arbitrary base (between 2 and 16) to base 10
+        """
+
+        base = 9
+        numbers = list(range(0, base))
+
+        for number in numbers:
+            result = arbitrary_to_base_10(str(number), base)
+            self.assertEqual(number, result,
+                             f'The correct result for the number {number} with base {base} must be {number}')
+
+    def test_arbitrary_to_base_10_base_10_ok(self):
+        """
+        Check if correctly converts from an arbitrary base (between 2 and 16) to base 10
+        """
+
+        base = 10
+        numbers = list(range(0, base))
+
+        for number in numbers:
+            result = arbitrary_to_base_10(str(number), base)
+            self.assertEqual(number, result,
+                             f'The correct result for the number {number} with base {base} must be {number}')
+
+    def test_arbitrary_to_base_10_base_11_ok(self):
+        """
+        Check if correctly converts from an arbitrary base (between 2 and 16) to base 10
+        """
+
+        base = 11
+        numbers = list(range(0, base))
+
+        ok_results = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11]
+
+        for number, ok_result in zip(numbers, ok_results):
+            result = arbitrary_to_base_10(str(number), base)
+            self.assertEqual(ok_result, result,
+                             f'The correct result for the number {number} with base {base} must be {number}')
+
+    def test_arbitrary_to_base_10_base_12_ok(self):
+        """
+        Check if correctly converts from an arbitrary base (between 2 and 16) to base 10
+        """
+
+        base = 12
+        numbers = list(range(0, base))
+
+        ok_results = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 12]
+
+        for number, ok_result in zip(numbers, ok_results):
+            result = arbitrary_to_base_10(str(number), base)
+            self.assertEqual(ok_result, result,
+                             f'The correct result for the number {number} with base {base} must be {number}')
 
 
+    def test_arbitrary_to_base_10_base_13_ok(self):
+        """
+        Check if correctly converts from an arbitrary base (between 2 and 16) to base 10
+        """
+
+        base = 13
+        numbers = list(range(0, base))
+
+        ok_results = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 13]
+
+        for number, ok_result in zip(numbers, ok_results):
+            result = arbitrary_to_base_10(str(number), base)
+            self.assertEqual(ok_result, result,
+                             f'The correct result for the number {number} with base {base} must be {number}')
+
+    def test_arbitrary_to_base_10_base_14_ok(self):
+        """
+        Check if correctly converts from an arbitrary base (between 2 and 16) to base 10
+        """
+
+        base = 14
+        numbers = list(range(0, base))
+
+        ok_results = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 14]
+
+        for number, ok_result in zip(numbers, ok_results):
+            result = arbitrary_to_base_10(str(number), base)
+            self.assertEqual(ok_result, result,
+                             f'The correct result for the number {number} with base {base} must be {number}')
+
+    def test_arbitrary_to_base_10_base_15_ok(self):
+        """
+        Check if correctly converts from an arbitrary base (between 2 and 16) to base 10
+        """
+
+        base = 15
+        numbers = list(range(0, base))
+
+        ok_results = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 15]
+
+        for number, ok_result in zip(numbers, ok_results):
+            result = arbitrary_to_base_10(str(number), base)
+            self.assertEqual(ok_result, result,
+                             f'The correct result for the number {number} with base {base} must be {number}')
+
+    def test_arbitrary_to_base_10_base_16_ok(self):
+        """
+        Check if correctly converts from an arbitrary base (between 2 and 16) to base 10
+        """
+
+        base = 16
+        numbers = list(range(0, base))
+
+        ok_results = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 16]
+
+        for number, ok_result in zip(numbers, ok_results):
+            result = arbitrary_to_base_10(str(number), base)
+            self.assertEqual(ok_result, result,
+                             f'The correct result for the number {number} with base {base} must be {number}')
+
+
+
+    # -------------------------------------------------------------------------------------------------------------- #
     def test_base_10_to_arbitrary_base_ok(self):
         """
         Check if correctly converts from base 10 to an arbitrary base (between 2 and 16)
