@@ -2,6 +2,7 @@
 
 function centerString(s, w) {
     let lenght_s = s.length;
+
     const countSpaces = (w - lenght_s) / 2; // Initialize variable to count the empties spaces
     console.log(parseInt(lenght_s));
 
