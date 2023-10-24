@@ -44,7 +44,6 @@ def hide_password(password) -> str:
     return new_password
 
 
-
 def main():
     password = generate_password()
     print(hide_password(password))
