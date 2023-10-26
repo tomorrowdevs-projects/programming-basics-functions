@@ -28,4 +28,3 @@ let newString = console.log(`${letterToCapitalize.concat(stringToSlice)}`);
 newString = stringToCapitalize;
 
 const letterI = ' i ';
-capitalize_it();
