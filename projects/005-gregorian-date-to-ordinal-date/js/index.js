@@ -51,4 +51,4 @@ const day = Number(prompt('Enter an integer between 1 to 31'));
 const month = Number(prompt('Enter an integer between 1 to 12'));
 const year = Number(prompt('Enter an year'));
 
-gregorian_to_ordinal_date((day, month, year));
+gregorian_to_ordinal_date(day, month, year);
