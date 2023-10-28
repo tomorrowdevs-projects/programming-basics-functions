@@ -1,18 +1,16 @@
 'use strict';
 function shippingCalculator(totalItem) {
     if (totalItem > 1) {
-        return alert(
-            `The total number of purchase is ${totalItem}. Total shipping is €${totalShipping.toFixed(
-                2
-            )}.`
-        );
+        return `The total number of purchase is ${totalItem}. Total shipping is €${totalShipping.toFixed(
+            2
+        )}.`;
     } else if (
         totalItem <= 0 ||
         totalItem === '' ||
         totalItem === ' ' ||
         isNaN(totalItem)
     ) {
-        alert('Enter a number greater than 0');
+        ('Enter a number greater than 0');
     } else {
         return alert(
             `The total number of purchase is ${totalItem}. Total shipping is €${firstItem}.`
