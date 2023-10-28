@@ -1,10 +1,5 @@
 'use strict';
 function taxiFare(distanceTravelledInMeters) {
-    // const totalFare =
-    //     distanceTravelledInMeters < metersSupplement
-    //         ? `The total fare is €${baseFare.toFixed(2)}.`
-    //         : `The total fare is €${(supplementFare + baseFare).toFixed(2)}`;
-    // return totalFare;
     if (distanceTravelledInMeters < metersSupplement) {
         return `The total fare is €${baseFare.toFixed(2)}.`;
     } else if (
