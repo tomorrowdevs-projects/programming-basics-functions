@@ -3,73 +3,56 @@
 function integerToOrdinal(integer) {
     switch (integer) {
         case 1:
-            alert(
-                `The number entered is ${integer} and its English ordinal is First.`
-            );
+            return `First.`;
             break;
         case 2:
-            alert(
-                `The number entered is ${integer} and its English ordinal is Second.`
-            );
+            return `Second.`;
             break;
         case 3:
-            alert(
-                `The number entered is ${integer} and its English ordinal is Third.`
-            );
+            return `Third.`;
             break;
         case 4:
-            alert(
-                `The number entered is ${integer} and its English ordinal is Fourth.`
-            );
+            return `Fourth.`;
             break;
         case 5:
-            alert(
-                `The number entered is ${integer} and its English ordinal is Fifth.`
-            );
+            return `Fifth.`;
             break;
         case 6:
-            alert(
-                `The number entered is ${integer} and its English ordinal is Sixth.`
-            );
+            return `Sixth.`;
             break;
         case 7:
-            alert(
-                `The number entered is ${integer} and its English ordinal is Seventh.`
-            );
+            return `Seventh.`;
             break;
         case 8:
-            alert(
-                `The number entered is ${integer} and its English ordinal is Eighth.`
-            );
+            return `Eighth.`;
             break;
         case 9:
-            alert(
-                `The number entered is ${integer} and its English ordinal is Ninth.`
-            );
+            return `Ninth.`;
             break;
         case 10:
-            alert(
-                `The number entered is ${integer} and its English ordinal is Tenth.`
-            );
+            return `Tenth.`;
             break;
         case 11:
-            alert(
-                `The number entered is ${integer} and its English ordinal is Eleventh.`
-            );
+            return `Eleventh.`;
             break;
         case 12:
-            alert(
-                `The number entered is ${integer} and its English ordinal is Twelth.`
-            );
+            return `Twelth.`;
             break;
         default:
-            alert(' ');
+            return ' ';
     }
 }
 
 // Main programm
 const integer = Number(prompt('Enter a number from 1 to 12'));
-integerToOrdinal(integer);
+const ordinal = integerToOrdinal(integer);
+if (ordinal) {
+    console.log(
+        `The number entered is ${integer} and its English ordinal is ${ordinal}`
+    );
+} else {
+    console.log('Invalid input!');
+}
 for (let i = 1; i <= 12; i++) {
     integerToOrdinal(i);
 }
