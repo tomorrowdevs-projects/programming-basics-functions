@@ -1,4 +1,23 @@
 'use strict';
+function taxiFare(distanceTravelledInMeters) {
+    // const totalFare =
+    //     distanceTravelledInMeters < metersSupplement
+    //         ? `The total fare is €${baseFare.toFixed(2)}.`
+    //         : `The total fare is €${(supplementFare + baseFare).toFixed(2)}`;
+    // return totalFare;
+    if (distanceTravelledInMeters < metersSupplement) {
+        return `The total fare is €${baseFare.toFixed(2)}.`;
+    } else if (
+        distanceTravelled === '' ||
+        distanceTravelled === ' ' ||
+        distanceTravelled === ' , ' ||
+        isNaN(distanceTravelled)
+    ) {
+        return `Insert a valid number`;
+    } else {
+        return `The total fare is €${(supplementFare + baseFare).toFixed(2)}`;
+    }
+}
 
 const baseFare = 4;
 const supplementPrice = 0.25;
@@ -15,12 +34,5 @@ const distanceTravelledInMeters = distanceTravelled * 1000;
 const supplementFare =
     (distanceTravelledInMeters / metersSupplement) * supplementPrice;
 
-function taxiFare(distanceTravelledInMeters) {
-    const totalFare =
-        distanceTravelledInMeters < metersSupplement
-            ? alert(`The total fare is €${baseFare.toFixed(2)}.`)
-            : alert(
-                  `The total fare is €${(supplementFare + baseFare).toFixed(2)}`
-              );
-}
-taxiFare();
+const fareMessage = taxiFare(distanceTravelledInMeters);
+console.log(fareMessage);
