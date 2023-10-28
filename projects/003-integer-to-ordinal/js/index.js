@@ -53,6 +53,3 @@ if (ordinal) {
 } else {
     console.log('Invalid input!');
 }
-for (let i = 1; i <= 12; i++) {
-    integerToOrdinal(i);
-}
