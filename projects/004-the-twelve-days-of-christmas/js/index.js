@@ -2,67 +2,43 @@
 function verseSong(verse) {
     switch (verse) {
         case 1:
-            alert(
-                `On the first day of Christmas my true love sent to me: ${firstVerse}.`
-            );
+            return `On the first day of Christmas my true love sent to me: ${firstVerse}.`;
             break;
         case 2:
-            alert(
-                `On the second day of Christmas my true love sent to me: ${secondVerse}.`
-            );
+            return `On the second day of Christmas my true love sent to me: ${secondVerse}.`;
             break;
         case 3:
-            alert(
-                `On the third day of Christmas my true love sent to me: ${thirdVerse}.`
-            );
+            return `On the third day of Christmas my true love sent to me: ${thirdVerse}.`;
             break;
         case 4:
-            alert(
-                `On the fourth day of Christmas my true love sent to me: ${fourthVerse}.`
-            );
+            return `On the fourth day of Christmas my true love sent to me: ${fourthVerse}.`;
             break;
         case 5:
-            alert(
-                `On the fifth day of Christmas my true love sent to me: ${fifthVerse}.`
-            );
+            return `On the fifth day of Christmas my true love sent to me: ${fifthVerse}.`;
             break;
         case 6:
-            alert(
-                `On the sixth day of Christmas my true love sent to me: ${sixthVerse}.`
-            );
+            return `On the sixth day of Christmas my true love sent to me: ${sixthVerse}.`;
             break;
         case 7:
-            alert(
-                `On the seventh day of Christmas my true love sent to me: ${seventhVerse}.`
-            );
+            return `On the seventh day of Christmas my true love sent to me: ${seventhVerse}.`;
             break;
         case 8:
-            alert(
-                `On the eighth day of Christmas my true love sent to me: ${eighthVerse}.`
-            );
+            return `On the eighth day of Christmas my true love sent to me: ${eighthVerse}.`;
             break;
         case 9:
-            alert(
-                `            On the ninth day of Christmas my true love sent to me: ${ninthVerse}.`
-            );
+            return `            On the ninth day of Christmas my true love sent to me: ${ninthVerse}.`;
             break;
         case 10:
-            alert(
-                `On the tenth day of Christmas my true love sent to me: ${tenthVerse}.`
-            );
+            return `On the tenth day of Christmas my true love sent to me: ${tenthVerse}.`;
             break;
         case 11:
-            alert(
-                `On the eleventh day of Christmas my true love sent to me: ${eleventhVerse}.`
-            );
+            return `On the eleventh day of Christmas my true love sent to me: ${eleventhVerse}.`;
             break;
         case 12:
-            alert(
-                `On the twelth day of Christmas my true love sent to me: ${twelthVerse}.`
-            );
+            return `On the twelfth day of Christmas my true love sent to me: ${twelfthVerse}.`;
             break;
         default:
-            alert(' ');
+            return ' ';
     }
 }
 
@@ -80,10 +56,20 @@ const eighthVerse = `eight maids a-milking, ${seventhVerse.toLowerCase()}`;
 const ninthVerse = `nine ladies dancing, ${eighthVerse.toLowerCase()}`;
 const tenthVerse = `ten lords a-leaping, ${ninthVerse.toLowerCase()}`;
 const eleventhVerse = `eleven pipers piping, ${tenthVerse.toLowerCase()}`;
-const twelthVerse = `twelve drummers drumming, ${eleventhVerse.toLowerCase()}`;
+const twelfthVerse = `twelve drummers drumming, ${eleventhVerse.toLowerCase()}`;
 
-verseSong(verse);
+if (verse >= 1 && verse <= 12) {
+    const result = verseSong(verse);
+    alert(result);
+} else {
+    alert('Insert a valid number');
+}
 
 for (let i = 1; i <= 12; i++) {
     verseSong(i);
+}
+
+for (let i = 1; i <= 12; i++) {
+    const result = verseSong(i);
+    console.log(result);
 }
