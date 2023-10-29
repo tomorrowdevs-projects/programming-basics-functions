@@ -1,15 +1,20 @@
 'use strict';
 
+function randomPassword() {
+    return Password;
+}
+
+// main Programm
 const lenghtPassword = Math.floor(Math.random() * (10 - 7 + 1) + 7); // Set 10 as the maximum and 7 as the minimum.
 console.log(lenghtPassword);
+console.log(typeof lenghtPassword);
 
-let randomPassword = ' ';
+let Password = '';
 
 for (let i = 1; i <= lenghtPassword; i++) {
     const randomNumber = Math.floor(Math.random() * (126 - 33 + 1) + 33);
-
-    randomPassword += randomNumber + ' ';
+    Password += String.fromCharCode(randomNumber) + ' ';
 }
-console.log(randomPassword);
-let convertedRandomPassword = String.fromCharCode(randomPassword);
-console.log(convertedRandomPassword);
+
+const result = randomPassword();
+console.log(result);
