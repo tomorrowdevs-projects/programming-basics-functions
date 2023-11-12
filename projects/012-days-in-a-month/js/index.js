@@ -43,7 +43,7 @@ function daysInAMonth(month, year) {
     } else if (month === 12 && year >= 1000 && year <= 9999) {
         return `In December ${year} there are 31 days.`;
     } else {
-        return 'Ciao';
+        return 'Incorrect input';
     }
 }
 
