@@ -45,7 +45,7 @@ function checkMagicDates(month, day, yearLastTwoDigits) {
         }
     }
 
-    const mese = getMonth(month);
+    const monthInLetters = getMonth(month);
 
     // I have stored some conditions in some variables that I do not want to repeat later.
     const leapYear = Number(
@@ -87,7 +87,7 @@ function checkMagicDates(month, day, yearLastTwoDigits) {
             februaryNotLeapYear === true ||
             februaryIsLeapYear === true)
     ) {
-        return `${mese} ${day}, ${year} is a magic date`;
+        return `${monthInLetters} ${day}, ${year} is a magic date`;
     } else if (
         month * day !== yearLastTwoDigits &&
         month >= 1 &&
@@ -101,7 +101,7 @@ function checkMagicDates(month, day, yearLastTwoDigits) {
             februaryNotLeapYear === true ||
             februaryIsLeapYear === true)
     ) {
-        return `${mese} ${day}, ${year} is not a magic date`;
+        return `${monthInLetters} ${day}, ${year} is not a magic date`;
     } else {
         return 'The entered date is not valid';
     }
