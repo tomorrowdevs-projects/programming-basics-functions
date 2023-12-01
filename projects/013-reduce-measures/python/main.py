@@ -55,7 +55,7 @@ def reduce_measures(units, unit_of_measure):
             else: 
                 result += f' {teaspoon} teaspoons'
 
-        elif 16 < units < 48:
+        elif 3 < units < 48:
             cup = 0
             tablespoon = units // 3
             teaspoon = units - tablespoon * 3 
@@ -70,13 +70,11 @@ def reduce_measures(units, unit_of_measure):
                 result += f' {teaspoon} teaspoon'
             else: 
                 result += f' {teaspoon} teaspoons'
-        else:
+        elif units <= 3:
             cup = 0
             tablespoon = 0
-            teaspoon = units
-            if teaspoon <= 1 :
-                result += f'{cup} cup, {tablespoon} tablespoon, {units} teaspoon'
-            else: 
-                result += f'{cup} cups, {tablespoon} tablespoon, {units} teaspoon' 
+            result += f'{cup} cup, {tablespoon} tablespoon, {units} teaspoon'
+ 
     return result
 
+print(reduce_measures(73,'tablespoon'))
