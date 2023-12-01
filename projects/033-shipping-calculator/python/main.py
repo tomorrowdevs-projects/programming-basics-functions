@@ -15,5 +15,7 @@ def main():
     else:
         print(f'Shipping costs are: {round(shipping_costs(user_input), 2)} €')
 
-main()
+# conditional that run main program only if the script has not been imported
+if __name__ == '__main__':
+    main()
 
