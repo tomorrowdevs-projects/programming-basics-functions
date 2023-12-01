@@ -31,14 +31,14 @@ def gregorian_date_to_ordinal(day,month,year):
                     ordinal_day += 30
             ordinal_day += day
 
-        return f'{year} - {ordinal_day}'
+        return ordinal_day
 
 def main():
     
-    user_day = int(input('Enter a day: '))
-    user_month = int(input('Enter a month: '))
-    user_year = int(input('Enter a year: '))
-    print(gregorian_date_to_ordinal(user_day,user_month,user_year))
+    user_day = int(input('Enter a day (as integer): '))
+    user_month = int(input('Enter a month (as integer): '))
+    user_year = int(input('Enter a year (as integer): '))
+    print(f'Year: {user_year}\nOrdinal day: {gregorian_date_to_ordinal(user_day,user_month,user_year)}')
 
 if __name__ == "__main__":
     main()
