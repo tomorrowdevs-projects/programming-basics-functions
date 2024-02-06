@@ -1,5 +1,13 @@
 
-def gregorian_date_to_ordinal(day,month,year):
+def gregorian_to_ordinal_date(day: int,month: int,year: int)-> int:
+    '''Returns the ordinal day gived a gregorian date. 
+            :parameters: 
+                    day(int): a integer for the day.
+                    month(int): a integer for the month.
+                    year: a integer for the year. 
+            :return:
+                    ordinal date(int): the corresponding ordinal day.  
+    '''
 
     if year % 400 == 0:
         leap_year = True
@@ -34,11 +42,13 @@ def gregorian_date_to_ordinal(day,month,year):
         return ordinal_day
 
 def main():
-    
+    '''Asks a gregorian date and prints the corresponding ordinal day'''    
     user_day = int(input('Enter a day (as integer): '))
     user_month = int(input('Enter a month (as integer): '))
     user_year = int(input('Enter a year (as integer): '))
-    print(f'Year: {user_year}\nOrdinal day: {gregorian_date_to_ordinal(user_day,user_month,user_year)}')
+    print(f'Ordinal day: {gregorian_to_ordinal_date(user_day,user_month,user_year)}')
 
+
+#runs the program only if file has not been imported
 if __name__ == "__main__":
     main()
