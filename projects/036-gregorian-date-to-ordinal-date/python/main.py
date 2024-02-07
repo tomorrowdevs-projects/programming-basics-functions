@@ -8,7 +8,7 @@ def gregorian_to_ordinal_date(day: int,month: int,year: int)-> int:
             :return:
                     ordinal date(int): the corresponding ordinal day.  
     '''
-
+    
     if year % 400 == 0:
         leap_year = True
     elif year % 400 != 0 and year % 100 != 0 and year % 4 == 0:
@@ -16,11 +16,13 @@ def gregorian_to_ordinal_date(day: int,month: int,year: int)-> int:
     else:
         leap_year = False
 
+    # checks whether the date is real or not
     if (day > 28 and month == 2 and leap_year == False) or (day > 29 and month == 2 and leap_year == True) or (day > 31 and (1 <= month <= 7 and month % 2 != 0)) or (day > 31 and (7 < month <= 12 and month % 2 == 0)) or (day > 30 and (1 <= month <= 7 and month % 2 == 0)) or  (day > 30 and (7 < month <= 12 and month % 2 != 0)) or  month > 12 or month < 1 :
         return 'invalid date'
     else:    
         ordinal_day = 0
 
+    # loop that adds month by month days into a variable to get the ordinal day.
         if month == 1:
             ordinal_day = day
         else:
