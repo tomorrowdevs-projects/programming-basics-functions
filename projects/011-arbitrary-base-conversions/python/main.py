@@ -1,230 +1,79 @@
+def arbitrary_to_base_10(number:str,base:int)->int:
 
-def arbitrary_to_base_10(number,base):
+    '''Returns a number from an arbitrary base between 2 and 16 to a base number 10
+            :parameter: 
+                number(str): the number as string to convert.
+                base(int): base of the number.
+            :return:
+                result(int): the converted number.
     '''
-    Function that convert a number with base between 2 and 16 to base 10.
-    '''
+    
     if base > 16 or base < 2:
-        return 'base out of range'
-   
-    number = str(number)
+         return 'base out of range'
+    
+    number = number.upper()
 
-    result = 0
+    number_converted = 0
 
     exponent = 0
 
-    letter_list = 'ABCDEF'
-# series of conditionals that, in base of the number system choosen, modify execution's flow.
-    if base == 11:
-# for loop that iterates the number typed, eventually translate letters in number and perform the conversion.
-        for digit in number[::-1]:
-            if digit.isalpha() and not digit.upper() == letter_list[0]:
-                return 'error'
-            elif digit.upper() == letter_list[0]:
-                digit = 10
-            result += int(digit) * base ** exponent
-            exponent += 1
-        return int(result)
-    elif base == 12:
-        for digit in number[::-1]:
-            if digit.isalpha() and digit.upper() not in letter_list[0:2]:
-                return 'error'
-            elif digit.upper() == letter_list[0]:
-                digit = 10
-            elif digit.upper() == letter_list[1]:
-                digit = 11
-            result += int(digit) * base ** exponent
-            exponent += 1
-        return int(result)
-    elif base == 13:
-        for digit in number[::-1]:
-            if digit.isalpha() and digit.upper() not in letter_list[0:3]:
-                return 'error'
-            elif digit.upper() == letter_list[0]:
-                digit = 10
-            elif digit.upper() == letter_list[1]:
-                digit = 11
-            elif digit.upper() == letter_list[2]:
-                digit = 12
-            result += int(digit) * base ** exponent
-            exponent += 1
-        return int(result)
-    elif base == 14:
-        for digit in number[::-1]:
-            if digit.isalpha() and digit.upper() not in letter_list[0:4]:
-                return 'error'
-            elif digit.upper() == letter_list[0]:
-                digit = 10
-            elif digit.upper() == letter_list[1]:
-                digit = 11
-            elif digit.upper() == letter_list[2]:
-                digit = 12
-            elif digit.upper() == letter_list[3]:
-                digit = 13
-            result += int(digit) * base ** exponent
-            exponent += 1
-        return int(result)
-    elif base == 15:
-        for digit in number[::-1]:
-            if digit.isalpha() and digit.upper() not in letter_list[0:5]:
-                return 'error'
-            elif digit.upper() == letter_list[0]:
-                digit = 10
-            elif digit.upper() == letter_list[1]:
-                digit = 11
-            elif digit.upper() == letter_list[2]:
-                digit = 12
-            elif digit.upper() == letter_list[3]:
-                digit = 13
-            elif digit.upper() == letter_list[4]:
-                digit = 14
-            result += int(digit) * base ** exponent
-            exponent += 1
-        return int(result)
-    elif base == 16:
-        for digit in number[::-1]:
-            if digit.isalpha() and digit.upper() not in letter_list:
-                return 'error'
-            elif digit.upper() == letter_list[0]:
-                digit = 10
-            elif digit.upper() == letter_list[1]:
-                digit = 11
-            elif digit.upper() == letter_list[2]:
-                digit = 12
-            elif digit.upper() == letter_list[3]:
-                digit = 13
-            elif digit.upper() == letter_list[4]:
-                digit = 14
-            elif digit.upper() == letter_list[5]:
-                digit = 15
-            result += int(digit) * base ** exponent
-            exponent += 1
-        return int(result)
-# else statement that performs conversion if the number gived is not alphanumeric.
-    else: 
-        for digit in number[::-1]:
-            if digit.isalpha():
-                return 'error'
-            result += int(digit) * base ** exponent
-            exponent += 1
-        return int(result)
+    letter_dict = {'A': 10, 'B': 11, 'C': 12, 'D': 13, 'E': 14, 'F': 15}
 
-
-def base_10_to_arbitrary_base(number,base):
-    '''
-    defines a function that convert a number with base between 2 and 16 to base 10.
-    '''
-    if base > 16 or base < 2:
-        return 'base out of range'
-
-    result = ''
-# series of conditionals that, in base of the number system choosen, control execution's flow.
-    if base == 11:
-# while loop that divides the number for the base, store the remainder as result and eventually translate letters to perform the conversion.
-        while number != 0:
-            remainder = int(number % base)
-            if remainder == 10:
-                remainder = 'A'
-            result += str(remainder)
-            number = number // base
-# once while loop ends return the result inverted, so we have the number converted.
-        return result[::-1]
-    elif base == 12:
-        while number != 0:
-            remainder = int(number % base)
-            if remainder == 10:
-                remainder = 'A'
-            elif remainder == 11:
-                remainder = 'B'
-            result += str(remainder)
-            number = number // base
-        return result[::-1]
-    elif base == 13:
-        while number != 0:
-            remainder = int(number % base)
-            if remainder == 10:
-                remainder = 'A'
-            elif remainder == 11:
-                remainder = 'B'
-            elif remainder == 12:
-                remainder = 'C'
-            result += str(remainder)
-            number = number // base
-        return result[::-1]
-    elif base == 14:
-        while number != 0:
-            remainder = int(number % base)
-            if remainder == 10:
-                remainder = 'A'
-            elif remainder == 11:
-                remainder = 'B'
-            elif remainder == 12:
-                remainder = 'C'
-            elif remainder == 13:
-                remainder = 'D'
-            result += str(remainder)
-            number = number // base
-        return result[::-1]
-    elif base == 15:
-        while number != 0:
-            remainder = int(number % base)
-            if remainder == 10:
-                remainder = 'A'
-            elif remainder == 11:
-                remainder = 'B'
-            elif remainder == 12:
-                remainder = 'C'
-            elif remainder == 13:
-                remainder = 'D'
-            elif remainder == 14:
-                remainder = 'E'
-            result += str(remainder)
-            number = number // base
-        return result[::-1]
-    elif base == 16:
-        while number != 0:
-            remainder = int(number % base)
-            if remainder == 10:
-                remainder = 'A'
-            elif remainder == 11:
-                remainder = 'B'
-            elif remainder == 12:
-                remainder = 'C'
-            elif remainder == 13:
-                remainder = 'D'
-            elif remainder == 14:
-                remainder = 'E'
-            elif remainder == 15:
-                remainder = 'F'
-            result += str(remainder)
-            number = number // base
-        return result[::-1]
-    else:
-# else statements that performs conversion if number gived is not alphanumeric.
-        while number != 0:
-            remainder = int(number % base)
-            result += str(remainder)
-            number = number // base
-        return result[::-1]
+    # loops trough the string "number" and for each character: first checks if it is a valid one, second if it is a letter translate it to a number using "letter_dict" and computes the value adding it to variable "result", otherwise simply computes the value itself adding it to the variable.
+    for digit in number[::-1]:
+       if digit.isalpha() and digit not in letter_dict:
+           return 'not a valid number'
+       elif digit.isalpha()and digit in letter_dict:
+           number_converted += letter_dict[digit] * base ** exponent
+           exponent += 1
+       else:
+            number_converted += int(digit) * base ** exponent
+            exponent += 1
     
-# defines a main program that asks to user a number to convert ( with his base) and a base to perform the conversion, using the functions already defined. If user choose a base outside the range between 2 and 16 it displays an error message.
+    return number_converted
+
+
+def base_10_to_arbitrary_base(number:int,base:int)-> str:
+
+    '''Returns a number in the required base from a base number 10.
+            :parameter:
+                    number(int): the 10 base number.
+                    base(int): the base required.
+            :return:
+                    converted_number(str): the result of the conversion.
+    '''
+
+    if base > 16 or base < 2:
+         return 'base out of range'
+    
+    base_dict = {10 : 'A', 11 :'B', 12 : 'C', 13 : 'D', 14 : 'E', 15 : 'F'}
+    
+    converted_number = ''
+
+    #
+    while number != 0:
+        remainder = number % base
+        number = number // base
+
+        if 11 <= base <= 16 and remainder in base_dict and remainder >= 10:
+            converted_number += base_dict[remainder]
+        else:
+            converted_number += str(remainder)
+    converted_number = converted_number[::-1]
+
+    return converted_number
+
+
+        
 def main():
 
-    number = int(input('Enter a number to convert: '))
+    '''Main program that allows the user to make coversions from any base to base 10 and from base 10 to any base'''
 
-    base_of_number = int(input('Enter base of number: '))
+    number_with_base_x, from_base_x_to_10 = input('Enter any number and a base from 2 to 16 separated by a whitespace to convert it into a base 10 number: ').split()
+    print(f'The number "{number_with_base_x}" with base {from_base_x_to_10} is {arbitrary_to_base_10(number_with_base_x,int(from_base_x_to_10))} with base 10')
 
-    if base_of_number > 16 or base_of_number < 2:
-        return 'base out of range'
-    
-    base_conversion = int(input ('Enter base for conversion: '))
+    decimal_number, from_base_10_to_x = input('Enter any decimal number and a base from 2 to 16 separated by a whitespace to convert it: ').split()
+    print(f'The number "{decimal_number}" with base {from_base_10_to_x} is {base_10_to_arbitrary_base(int(decimal_number),int(from_base_x_to_10))} with base 10')
 
-    if base_conversion > 16 or base_conversion < 2:
-        return 'base out of range'
-
-    first_step = arbitrary_to_base_10(number, base_of_number)
-    
-    result = base_10_to_arbitrary_base(first_step, base_conversion)
-    
-    print(result)
-
-main()
+if __name__ == '__main__':
+    main()
