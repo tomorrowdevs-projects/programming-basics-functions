@@ -21,7 +21,7 @@ def reduce_measures(units:int, unit_of_measure:str)-> str:
         else:
             largest_units_possible += f'{cup} cups, '
 
-        # calculate tablespoon
+        # calculate tablespoons
         units = units % 48
         tablespoon = units // 3
         if tablespoon <= 1:
@@ -29,7 +29,7 @@ def reduce_measures(units:int, unit_of_measure:str)-> str:
         else:
             largest_units_possible += f'{tablespoon} tablespoons, '
 
-        #calculate teaspoon
+        #calculate teaspoons
         units = units % 3
         teaspoon = units
         if units <= 1:
@@ -64,7 +64,7 @@ def reduce_measures(units:int, unit_of_measure:str)-> str:
 
 def main():
      print(reduce_measures(59,'teaspoon'))
-     
+
 
 if __name__ == '__main__':
      main()
