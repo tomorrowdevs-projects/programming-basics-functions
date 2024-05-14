@@ -3,11 +3,11 @@ def ChirstmasSongVerse(VerseNumber):
         Day=['first','second','third','fourth','fifth','sixth','seventh','eighth','ninth','tenth','eleventh','twelfth']
         Gift=['Partridge in a pear tree','turtle doves','French hens','calling birds','golden rings','geese a-laying','swans a-swimming','maids a-milking','ladies dancing','lords a-leaping','pipers piping','drummers drumming']
         verse='On the {} day of Christmas my true love sent to me:'.format(Day[VerseNumber-1])
-        for i in range(VerseNumber):
-            if i==0:
-                verse=verse+' {}'.format(Gift[i])
+        for i in Gift[:VerseNumber]:
+            if i==Gift[0]:
+                verse=verse+' {}'.format(i)
             else:
-                verse=verse + ', {}'.format(Gift[i])
+                verse=verse + ', {}'.format(i)
         return verse
     else:
         print('Not expected input parameter, please retry')
