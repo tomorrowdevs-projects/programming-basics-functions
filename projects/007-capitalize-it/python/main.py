@@ -21,8 +21,8 @@ def capitalize_it(s):
     s=''.join(s)
     old_string=[' i ',' i.',' i?',' i!',' i\'']
     new_string=[' I ',' I.',' I?',' I!',' I\'']
-    for i in range(len(old_string)):
-        s=s.replace(old_string[i],new_string[i])
+    for i,j in zip(old_string, new_string):
+        s=s.replace(i,j)
     return s
 
 def main():
