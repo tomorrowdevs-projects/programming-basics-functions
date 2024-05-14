@@ -8,8 +8,8 @@ def center_string(s,w):
 
 def main():
     s=['Prova_1','Prova_10','Prova_100','Prova_1000','Prova_10000','Prova_100000000']
-    for i in range(len(s)):
-        print(center_string(s[i],15))
+    for i in s:
+        print(center_string(i,15))
     print('_______________')
 
 if __name__=='__main__':
