@@ -1,7 +1,9 @@
 from datetime import datetime, date
 from pytz import timezone
-from time import monotonic, sleep
+from time import sleep
 from threading import Thread, Event
+from msvcrt import getwch
+from os import system
 
 def current_time(tz=None):
     dt=datetime.now()
@@ -22,14 +24,40 @@ def current_time(tz=None):
         date_list=date_list+'Local Time'
     return date_list
 
-def countdown_timer(days=0,hours=0,minutes=0,seconds=0):
-    timer_duration=days*24*60*60+hours*60*60+minutes*60+seconds
-    print_time=start_time=monotonic()
-    print(timer_duration)
-    while monotonic()-start_time<timer_duration:
-        if monotonic()-print_time==1:
-            print(int(timer_duration-(monotonic()-start_time)))
-            print_time=monotonic()
+pause_event=Event()
+reset_event=Event()
+input_event=Event()
+
+def countdown_timer(days=0,hours=0,minutes=0,seconds=0,output_format='ss'):
+    if output_format=='dd':
+        timer_duration=days+hours/24+minutes/(24*60)+seconds/(24*60*60)
+        delay=24*60*60
+    elif output_format=='hh':
+        timer_duration=days*24+hours+minutes/60+seconds/(60*60)
+        delay=60*60
+    elif output_format=='mm':
+        timer_duration=days*24*60+hours*60+minutes+seconds/60
+        delay=60
+    elif output_format=='ss':
+        timer_duration=days*24*60*60+hours*60*60+minutes*60+seconds
+        delay=1
+    
+    i=0
+    while input_event.is_set() and i<timer_duration:
+        pause_event.wait()
+        if input_event.is_set():
+            if not reset_event.is_set():
+                print(i,end='\r')
+                i+=1
+                sleep(delay)
+            else:
+                reset_event.clear()
+                i=0
+                print(i,end='\r')
+                i+=1
+                sleep(delay)
+    if input_event.is_set():
+        print('Time finished!')
 
 def main():
     print('Wellcome to the time utility app! You can perform these operations:\n[1] - Show current time\n[2] - Set a countdown timer')
@@ -53,7 +81,27 @@ def main():
         hours=int(input('Please, enter the number of hours:'))
         minutes=int(input('Please, enter the number of minutes:'))
         seconds=int(input('Please, enter the number of seconds:'))
-        countdown_timer(days,hours,minutes,seconds)
-            
+        output_format=input('Please, enter the ouput format ([dd] days, [hh] hours, [mm] minutes or [ss] seconds):')
+        timer_thread=Thread(group=None,target=countdown_timer,args=(days,hours,minutes,seconds,output_format))
+        input_event.set()
+        pause_event.set()
+        timer_thread.start()
+        while input_event.is_set():
+            print('Press 0 to exit, 1 to pause or restart the countdown, 2 to reset the countdown')
+            key=getwch()
+            if key=='0':
+                input_event.clear()
+                pause_event.set()
+                system('cls')
+            elif key=='1':
+                if pause_event.is_set():
+                    pause_event.clear()
+                else:
+                    pause_event.set()
+            elif key=='2':
+                reset_event.set()
+                pause_event.set()
+            print('\033[2A')
+
 if __name__=='__main__':
     main()
