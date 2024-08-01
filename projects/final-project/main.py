@@ -47,13 +47,13 @@ def countdown_timer(days=0,hours=0,minutes=0,seconds=0,output_format='ss'):
         pause_event.wait()
         if input_event.is_set():
             if not reset_event.is_set():
-                print(i,end='\r')
+                print(timer_duration-i,end='\r')
                 i+=1
                 sleep(delay)
             else:
                 reset_event.clear()
                 i=0
-                print(i,end='\r')
+                print(timer_duration-i,end='\r')
                 i+=1
                 sleep(delay)
     if input_event.is_set():
