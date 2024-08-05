@@ -1,14 +1,18 @@
 from datetime import datetime, date
-from pytz import timezone
-from time import sleep
+from pytz import timezone, all_timezones
 from threading import Thread, Event
 from msvcrt import getwch
 from os import system
 
+input_event=Event()
+pause_event=Event()
+reset_event=Event()
+exit_event=Event()
+
 def current_time(tz=None):
     dt=datetime.now()
     if tz!=None:
-        if len(tz)==1:
+        if len(tz)==1 and type(tz)=='str':
             tz=timezone(tz)
         else:
             date_list=list()
@@ -24,10 +28,6 @@ def current_time(tz=None):
         date_list=date_list+'Local Time'
     return date_list
 
-pause_event=Event()
-reset_event=Event()
-input_event=Event()
-
 def countdown_timer(days=0,hours=0,minutes=0,seconds=0,output_format='ss'):
     if output_format=='dd':
         timer_duration=days+hours/24+minutes/(24*60)+seconds/(24*60*60)
@@ -41,33 +41,41 @@ def countdown_timer(days=0,hours=0,minutes=0,seconds=0,output_format='ss'):
     elif output_format=='ss':
         timer_duration=days*24*60*60+hours*60*60+minutes*60+seconds
         delay=1
-    
+    padding='{:>'+str(len(str(timer_duration))+1)+'}'
     i=0
     while input_event.is_set() and i<timer_duration:
-        pause_event.wait()
         if input_event.is_set():
             if not reset_event.is_set():
-                print(timer_duration-i,end='\r')
+                print(padding.format(timer_duration-i),end='\r')
                 i+=1
-                sleep(delay)
+                if pause_event.is_set():
+                    exit_event.wait(delay)
+                else:
+                    while not pause_event.is_set() and not exit_event.is_set():
+                        pass
             else:
                 reset_event.clear()
                 i=0
-                print(timer_duration-i,end='\r')
+                print(padding.format(timer_duration-i),end='\r')
                 i+=1
-                sleep(delay)
+                if pause_event.is_set():
+                    exit_event.wait(delay)
+                else:
+                    while not exit_event.is_set():
+                        pause_event.wait()
     if input_event.is_set():
         print('Time finished!')
 
 def main():
     print('Wellcome to the time utility app! You can perform these operations:\n[1] - Show current time\n[2] - Set a countdown timer')
-    operation=input('Input the number relevant to the operation you want to perform:')
+    operation=input('Input the number relevant to the operation you want to perform: ')
     if operation=='1':
+        print(all_timezones)
         tz_list=list()
-        tz=input('Please, input the time zone name or "None" for local time:')
+        tz=input('Please, input the time zone name or "None" for local time: ')
         while tz!='' and tz!='None':
             tz_list.append(tz)
-            tz=input('Please, input another time zone name or press enter to continue:')
+            tz=input('Please, input another time zone name or press enter to continue: ')
         
         if tz=='None':
             date=current_time()
@@ -77,11 +85,11 @@ def main():
             for dt in date:
                 print(dt)
     elif operation=='2':
-        days=int(input('Please, enter the number of days:'))
-        hours=int(input('Please, enter the number of hours:'))
-        minutes=int(input('Please, enter the number of minutes:'))
-        seconds=int(input('Please, enter the number of seconds:'))
-        output_format=input('Please, enter the ouput format ([dd] days, [hh] hours, [mm] minutes or [ss] seconds):')
+        days=int(input('Please, enter the number of days: '))
+        hours=int(input('Please, enter the number of hours: '))
+        minutes=int(input('Please, enter the number of minutes: '))
+        seconds=int(input('Please, enter the number of seconds: '))
+        output_format=input('Please, enter the ouput format ([dd] days, [hh] hours, [mm] minutes or [ss] seconds): ')
         timer_thread=Thread(group=None,target=countdown_timer,args=(days,hours,minutes,seconds,output_format))
         input_event.set()
         pause_event.set()
@@ -91,7 +99,7 @@ def main():
             key=getwch()
             if key=='0':
                 input_event.clear()
-                pause_event.set()
+                exit_event.set()
                 system('cls')
             elif key=='1':
                 if pause_event.is_set():
