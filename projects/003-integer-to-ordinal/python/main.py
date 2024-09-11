@@ -14,7 +14,7 @@ Your main program should only run when your file has not been imported into anot
 def integer_to_ordinal(intnumber):
 
     if intnumber == 1:
-        englishresult = "First"
+        englishresult = "First1"
     elif intnumber == 2:
         englishresult = "Second"
     elif intnumber == 3:
@@ -37,11 +37,11 @@ def integer_to_ordinal(intnumber):
         englishresult = "Eleventh"
     elif intnumber == 12:
         englishresult = "Twelveth"
-    else:
-        englishresult = ""
+    elif intnumber < 1 & intnumber > 12:
+        englishresult = " "
 
     return englishresult
 
 intnumber = int(input("Please input a number from 1 to 12: "))
 finalresult = integer_to_ordinal(intnumber)
-print = ("Ordinal number input in english: ", finalresult)
+print("Ordinal number input in english: ", finalresult)
