@@ -21,11 +21,27 @@ Your main program should only run when your file has not been imported into anot
 '''
 
 def gregorian_to_ordinal_date(day, month, year):
-    if year % 400 == 0:
+    if year % 400 ==  0 and year % 100 == 0:
+        totaldays = 366
+    elif year % 100 != 0 and year % 4 == 0:
+        totaldays = 366
+    else: totaldays = 365
+    
+    if month == 1 or 3 or 5 or 7 or 8 or 10 or 12:
+        totaldaysmonth = month * 31
+    elif month == 4 or 6 or 9 or 11:
+        totaldaysmonth = month * 30
+    elif month == 2:
+        if totaldays == 365:
+            totaldaysmonth = month * 28
+        else:
+            totaldaysmonth = month * 29
 
-    elif IntYear % 100 != 0 and IntYear % 4 == 0:
-
+    finalresult = (totaldays - totaldaysmonth) - day
+    return finalresult
 
 day = int(input("Please input a day in integers: "))
 month = int(input("Please input a month in integers: "))
 year = int(input("Please input a year in integers: "))
+finalresult = gregorian_to_ordinal_date(day, month, year)
+print("The result is: ", finalresult)
