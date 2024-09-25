@@ -19,20 +19,28 @@ Include a main program that reads a string from the user, capitalizes it using y
 '''
 
 def capitalize_it(string):
-    array = list(string)
-    newarray = []
-    newarray.append(array[0].upper())
-    del array[0]
-    for letter in array:
-        if letter == "." "!" "?":
-            nextletter =
-            newarray.append(nextletter.upper())
-        elif letter == "i":
-            newarray.append(letter.upper())
+    array = string.split()
+    newarray = [array[0].capitalize()]
+    #for index, letter in enumerate(array[1:]):
+    for i in range(1,len(array)):
+        #print(f"{array[i-1]=}")
+        if array[i-1][-1] in [".", "!", "?"]: 
+            newarray.append(array[i].capitalize())
+        elif array[i] == "i":
+            newarray.append(array[i].capitalize())
+        elif array[i][0] == "i":
+            if array[i][1] in [".", "!", "?", "'"]:
+                newarray.append(array[i].capitalize())
         else:
-            newarray.append(letter)
-    return newarray
-   
-string = str(input("Please insert a string without capitalizing anything: "))
-capitalizedstring = capitalize_it(string)
-print("The correct string is: ", capitalizedstring)
+            newarray.append(array[i])
+    return " ".join(newarray)
+
+
+def main():        
+    string = "what time do i have to be there? what's the address? i'll be there i.ll in a minute"
+    capitalizedstring = capitalize_it(string)
+    print("The correct string is: ", capitalizedstring)
+
+
+if __name__ == '__main__':
+    main()
