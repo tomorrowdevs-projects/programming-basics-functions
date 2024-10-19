@@ -34,7 +34,7 @@ add_time("6:30 PM", "205:12")
 
 Do not import any Python libraries. Assume that the start times are valid times. The minutes in the duration time will be a whole number less than 60, but the hour can be any whole number.'''
 
-def add_time(userstarttime, userdurationtime, userstartday):
+def add_time(userstarttime, userdurationtime):
     array = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}
     daycounter = 0
     hourscounter = 0
@@ -53,23 +53,30 @@ def add_time(userstarttime, userdurationtime, userstartday):
     totalhours = inthoursstarttime + inthoursdurationtime
     totalminutes = intminutesstarttime + intminutesdurationtime
 
-    #sistemare i cicli per aggiungere maggiori giorni o ore
+# sistemare il  valore newtotalminutes ed il valore newtotalhours
     if totalminutes >= 60:
-        newtotalminutes = totalminutes % 24
-        hourscounter += 1
-
+        newtotalminutes = totalminutes % 60
+        hourscounter = newtotalminutes // 60
+        return newtotalminutes
 
     if totalhours >= 24:
         newtotalhours = totalhours % 24
-        daycounter += 1
+        daycounter = newtotalminutes // 24
+        return newtotalhours
 
-    print(newtotalhours, newtotalminutes)
+    finalminutes = newtotalminutes
+    finalhours = newtotalhours + daycounter
+
+    if finalhours > 12:
+        PMfinalhours = finalhours - 12
+        print(PMfinalhours, ":", finalminutes, " PM")
+    else:
+        print(finalhours, ":", finalminutes, " AM")
 
 def main():
     userstarttime = input("Please input a starting time (indicate AM or PM): ")
     userdurationtime = input("Please input how many hours and minutes you wanna add: ")
-    userstartday = input("Starting day in letters: ")
-    add_time(userstarttime, userdurationtime, userstartday)
+    add_time(userstarttime, userdurationtime)
 
 if __name__ == '__main__':
     main()
