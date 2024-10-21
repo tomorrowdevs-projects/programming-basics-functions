@@ -34,44 +34,39 @@ add_time("6:30 PM", "205:12")
 
 Do not import any Python libraries. Assume that the start times are valid times. The minutes in the duration time will be a whole number less than 60, but the hour can be any whole number.'''
 
+import datetime
+
 def add_time(userstarttime, userdurationtime):
     array = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}
     daycounter = 0
     hourscounter = 0
 
-    correctstarttime = userstarttime[:-3]
-    hoursstarttime = correctstarttime[:2]
-    minutesstarttime = correctstarttime[-2:]
-    hoursdurationtime = userdurationtime[:2]
-    minutesdurationtime = userdurationtime[-2:]
+    splitteduserstarttime = userstarttime.split()
+    doublesplitteduserstarttime = splitteduserstarttime[0].split(":")
+    splitteduserdurationtime = userdurationtime.split(":")
 
-    inthoursstarttime = int(hoursstarttime)
-    intminutesstarttime = int(minutesstarttime)
-    inthoursdurationtime = int(hoursdurationtime)
-    intminutesdurationtime = int(minutesdurationtime)
+    hoursstarttime = int(doublesplitteduserstarttime[0])
+    minutesstarttime = int(doublesplitteduserstarttime[1])
+    hoursdurationtime = int(splitteduserdurationtime[0])
+    minutesdurationtime = int(splitteduserdurationtime[1])
 
-    totalhours = inthoursstarttime + inthoursdurationtime
-    totalminutes = intminutesstarttime + intminutesdurationtime
-
-# sistemare il  valore newtotalminutes ed il valore newtotalhours
-    if totalminutes >= 60:
-        newtotalminutes = totalminutes % 60
-        hourscounter = newtotalminutes // 60
-        return newtotalminutes
+    totalhours = hoursstarttime + hoursdurationtime
+    totalminutes = minutesstarttime + minutesdurationtime
 
     if totalhours >= 24:
         newtotalhours = totalhours % 24
-        daycounter = newtotalminutes // 24
-        return newtotalhours
-
-    finalminutes = newtotalminutes
+        daycounter = totalhours // 24
+    else:
+        newtotalhours = totalhours
+        daycounter = 0
+    
     finalhours = newtotalhours + daycounter
 
     if finalhours > 12:
         PMfinalhours = finalhours - 12
-        print(PMfinalhours, ":", finalminutes, " PM")
+        print(f"{PMfinalhours:03d} : {totalminutes:02d} PM")
     else:
-        print(finalhours, ":", finalminutes, " AM")
+        print(f"{finalhours:03d} : {totalminutes:02d} {splitteduserstarttime[1]}")
 
 def main():
     userstarttime = input("Please input a starting time (indicate AM or PM): ")
